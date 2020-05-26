@@ -1,6 +1,6 @@
-import flask 
+import flask
 from main import app
-from main.models import Entry
+from main.models.entry import Entry
 
 @app.route('/')
 def show_entries():
