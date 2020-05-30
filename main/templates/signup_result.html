@@ -1,3 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Signup Result</h2>
+<table>
+    <tr>
+        <th>ID:</th>
+        <td>{{ user.id }}</td>
+    </tr>
+    <tr>
+        <th>PASSWORD:</th>
+        <td>{{ user.password }}</td>
+    </tr>
+</table>
+{% endblock %}
+
+
+
+
 <!DOCTYPE html>
 <html lang="ja">
     <head>
