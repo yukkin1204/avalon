@@ -3,12 +3,12 @@ from flask import request
 from main import app, models
 from main.models.user import User
 
-@app.route('/users/signup/', methods=['GET'])
+@app.route('/signup', methods=['GET'])
 def show_signup():
     return flask.render_template('signup.html')
 
 
-@app.route('/users/signup/', methods=['POST'])
+@app.route('/signup', methods=['POST'])
 def signup():
     user = User()
     user.id = request.form['id']
