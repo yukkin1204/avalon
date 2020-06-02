@@ -2,6 +2,7 @@ import flask
 from flask import render_template, request, redirect
 from main import app
 from main.models.user import User
+from main.forms import LoginForm
 
 @app.route('/', methods=['GET'])
 def show_top():
@@ -35,4 +36,14 @@ def signup():
 
 @app.route('/login', methods=['GET'])
 def show_login():
-    return flask.render_template('login.html')
+    form = LoginForm()
+    return render_template('login.html', title='Login', form=form)
+
+@app.route('/login', methods=['POST'])
+def login():
+    form = LoginForm()
+    user = User.query.filter_by(id=form.id.data).first()
+    if user is None or not user.password == form.password.data:   
+        return redirect('/login')
+    return redirect('/users')
+
