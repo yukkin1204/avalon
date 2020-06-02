@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>User List</h2>
+<table border="2">
+    <tr>
+        <th>No</th>
+        <th>ID</th>
+        <th>PASSWORD</th>
+        <th></th>
+    </tr>
+    {% for user in users %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ user.id }}</td>
+            <td>{{ user.password }}</td>
+            <td>
+                <form method="post" action="/users/{{ user.id }}">
+                    <input type="hidden" name="_method" value="DELETE" />
+                    <input type="submit" value="削除" />
+                </form>
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+{% endblock %}
