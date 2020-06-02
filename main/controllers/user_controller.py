@@ -21,4 +21,4 @@ def signup():
 
 @app.route('/login', methods=['GET'])
 def show_login():
-    return flask.render_template('login.html' )
+    return flask.render_template('login.html')
