@@ -6,13 +6,13 @@
     <tr>
         <th>部屋名</th>
         <th>日時</th>
-        <th>状態</th>
+        <th></th>
     </tr>
     {% for game in games %}
         <tr>
             <td>{{ game.name }}</td>
             <td>{{ game.date }}</td>
-            <td>{{ game.progress }}</td>
+            <td><a href=*>入室</a></td>
         </tr>
     {% endfor %}
 </table>
