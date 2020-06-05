@@ -2,22 +2,21 @@
 
 {% block content %}
 <h2>Signup</h2>
-<form method="post">
-    <table>
-        <tr>
-            <th>ID:</th>
-            <td>
-                <input type="text" name="id" />
-            </td>
-        </tr>
-        <tr>
-            <th>PASSWORD:</th>
-            <td>
-                <input type="text" name="password" />
-            </td>
-        </tr>
-    </table>
-    <input type="submit" value="登録" />
+<form action="" method="post">
+    <p>
+        {{ form.id.label }}<br>
+        {{ form.id(size=32) }}<br>
+        {% for error in form.id.errors %}
+            <span style='color:red;'>{{ error }}</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.password.label }}<br>
+        {{ form.password(size=32) }}<br>
+        {% for error in form.password.errors %}
+            <span style='color:red;'>{{ error }}</span>
+        {% endfor %}
+    </p>
+    <p>{{ form.submit() }}</p>
 </form>
 {% endblock %}
-

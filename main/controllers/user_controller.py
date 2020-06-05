@@ -2,7 +2,7 @@ import flask
 from flask import render_template, request, redirect
 from main import app
 from main.models.user import User
-from main.forms import LoginForm
+from main.forms import LoginForm, SignupForm
 
 @app.route('/', methods=['GET'])
 def show_top():
@@ -22,10 +22,12 @@ def delete_user(id):
 
 @app.route('/signup', methods=['GET'])
 def show_signup():
-    return render_template('signup.html', title='Signup')
+    form = SignupForm()
+    return render_template('signup.html', title='Signup', form=form)
 
 @app.route('/signup', methods=['POST'])
 def signup():
+    form = SignupForm
     user = User()
     user.id = request.form['id']
     user.password = request.form['password']
