@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Game List</h2>
+<table border="2">
+    <tr>
+        <th>部屋名</th>
+        <th>日時</th>
+        <th>状態</th>
+    </tr>
+    {% for game in games %}
+        <tr>
+            <td>{{ game.name }}</td>
+            <td>{{ game.date }}</td>
+            <td>{{ game.progress }}</td>
+        </tr>
+    {% endfor %}
+</table>
+{% endblock %}

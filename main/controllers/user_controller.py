@@ -43,7 +43,7 @@ def show_login():
 def login():
     form = LoginForm()
     user = User.query.filter_by(id=form.id.data).first()
-    if user is None or not user.password == form.password.data:   
+    if user is None or not user.password == form.password.data:
         return redirect('/login')
     return redirect('/users')
 
