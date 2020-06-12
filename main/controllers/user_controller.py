@@ -1,5 +1,5 @@
 import flask
-from flask import render_template, request, redirect
+from flask import render_template, request, redirect, flash
 from main import app
 from main.models.user import User
 from main.forms import LoginForm, SignupForm
